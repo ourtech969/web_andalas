@@ -1,9 +1,31 @@
-* {
-    margin: 0;
+html,
+body,
+*,
+:root {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    scroll-snap-type: y mandatory;
 }
 
+body {
+    font-family: "Sora", sans-serif;
+    padding-top: 80px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+
+ 
+.hero, 
+.we {
+    scroll-snap-align: start;
+}
 
 .nav {
     animation: slideUp 0.8s ease-out;
@@ -28,7 +50,8 @@
 .nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    padding-right: 50px;
 }
 
 .nav a {
@@ -55,7 +78,6 @@
     justify-content: center;
     align-items: center;
     color: white;
-    font-family: poppins;
 }
 
 .hero::before {
@@ -99,8 +121,49 @@
 }
 
 /* Untuk mobile (max-width: 768px) */
-@media (max-width: 768px) {
-  /* CSS untuk mobile */
+@media (max-width: 922px) {
+    .nav {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 14px;
+        width: 100%;
+        align-items: right;
+    }
+
+    .nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 100%;
+        position: relative;
+        color: red;
+    }
+
+    .hero {
+        height: 100vh;
+        width: 100%;
+        background-image: url('/image/foto_bersama.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .hero h1 {
+        font-size: 20px;
+    }
+
+    .header {
+        font-size: 24px;
+    }
+
+    .we {
+        font-size: 28px;
+        text-align: center;
+        padding: 0 20px;
+    }
 }
 
 /* Untuk tablet (min-width: 769px) dan (max-width: 1024px) */
@@ -111,4 +174,32 @@
 /* Untuk desktop (min-width: 1025px) */
 @media (min-width: 1025px) {
   /* CSS untuk desktop */
+}
+
+.we {
+    animation: slideUp 1s ease-out 0.3s both;
+    background-image: url('/image/mufaroqoh_putri.jpg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: bottom;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.we h2 {
+    animation: slideUp 1s ease-out 0.3s both;
+    position: relative;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.we p {
+    animation: slideUp 1s ease-out 0.3s both;
+    position: relative;
+    font-size: 1rem;
 }
