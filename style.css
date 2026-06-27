@@ -45,13 +45,19 @@ body {
 
 .header {
     color:orange;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
 }
 
 .nav ul {
+    display: flex;
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     padding-right: 50px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav a {
