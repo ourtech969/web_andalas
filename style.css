@@ -18,7 +18,7 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
- 
+
 .hero,
 .we {
     scroll-snap-align: start;
@@ -64,13 +64,13 @@ body::-webkit-scrollbar {
 
 .nav a:hover {
     text-decoration: underline;
-    color: orange;
+    color: rgb(229, 160, 33);
     transition: 0.5s;
 }
 
 .hero {
     animation: slideUp 1s ease-out 0.3s both;
-    background-image: url('image/foto_bersama.jpg');
+    background-image: url('/image/foto_putra/haflah_putra_1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -162,7 +162,7 @@ body::-webkit-scrollbar {
     .hero {
         height: 100vh;
         width: 100%;
-        background-image: url('/image/foto_bersama.jpg');
+        background-image: url('/image/foto_putra/haflah_putra_1.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -211,7 +211,7 @@ body::-webkit-scrollbar {
 
 .we {
     animation: slideUp 1s ease-out 0.3s both;
-    background-image: url('/image/mufaroqoh_putri.jpg');
+    background-image: url('/image/foto_putri/haflah_putri.jpg');
     height: 100vh;
     width: 100%;
     background-size: cover;
