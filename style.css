@@ -63,7 +63,7 @@ body::-webkit-scrollbar {
     border: none;
     cursor: pointer;
     padding: 0;
-    gap: 5px;
+    gap: 3px;
     justify-content: center;
     align-items: center;
     width: 30px;
@@ -76,18 +76,6 @@ body::-webkit-scrollbar {
     background-color: white;
     border-radius: 3px;
     transition: 0.3s ease;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(10px, 10px);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .nav a {
@@ -371,11 +359,7 @@ body::-webkit-scrollbar {
         display: none;
     }
 
-    .we {
-        height: 100vh;
-    }
-
-    .hero {
+    .we, .hero {
         height: 100vh;
     }
 }
@@ -423,4 +407,10 @@ body::-webkit-scrollbar {
     position: relative;
     z-index: 2;
     animation: SlideInKiri 2s ease-in-out both;
+}
+
+.memo {
+    animation: slideInKiri 2s ease-in-out both;
+    font-size: 15px;
+    text-decoration: underline;
 }
