@@ -13,6 +13,7 @@ body {
     font-family: "Sora", sans-serif;
     padding-top: 70px;
     -ms-overflow-style: none;
+    background-color: rgb(196, 184, 170);
 }
 
 body::-webkit-scrollbar {
@@ -47,14 +48,46 @@ body::-webkit-scrollbar {
     margin: 0;
 }
 
-.nav ul {
+.nav-menu {
     display: flex;
     list-style: none;
-    display: flex;
     gap: 30px;
     padding-right: 50px;
     margin: 0;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
     padding: 0;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .nav a {
@@ -66,6 +99,10 @@ body::-webkit-scrollbar {
     text-decoration: underline;
     color: rgb(229, 160, 33);
     transition: 0.5s;
+}
+
+.nav-menu.active {
+    display: flex;
 }
 
 .hero {
@@ -148,25 +185,107 @@ body::-webkit-scrollbar {
         position: fixed;
     }
 
-    .nav ul {
+    .hamburger {
         display: flex;
-        text-align: right;
-        gap: 5px;
-        padding-right: 50px;
-        margin: 0;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.9) 100%);
+        gap: 0;
         padding: 0;
-        font-size: 13px;
+        margin: 0;
+        font-size: 14px;
+        display: none;
+        z-index: 9;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-menu li {
+        padding: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        text-align: right;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        display: inline-block;
+        padding: 12px 24px;
+        margin: 8px 20px;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        border-radius: 6px;
+        background-color: transparent;
+    }
+
+    .nav-menu a:hover {
+        color: rgb(229, 160, 33);
+        background-color: rgba(229, 160, 33, 0.15);
+        padding-right: 36px;
+    }
+
+    .nav-menu a::before {
+        content: '';
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 4px;
+        background-color: rgb(229, 160, 33);
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .nav-menu a:hover::before {
+        opacity: 1;
     }
     
 
     .hero {
-        height: 100vh;
+        height: 50vh;
         width: 100%;
         background-image: url('/image/foto_putra/haflah_putra_1.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
+
+    .we {
+        background-image: url('/image/foto_putri/haflah_putri.jpg');
+        height: 50vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        }
 
     .hero h1 {
         font-size: 20px;
@@ -206,13 +325,64 @@ body::-webkit-scrollbar {
 
 /* Untuk desktop (min-width: 1025px) */
 @media (min-width: 1025px) {
-  /* CSS untuk desktop */
+    .hamburger {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex !important;
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        background-color: transparent;
+        flex-direction: row;
+        padding: 0;
+        opacity: 1;
+        transform: translateY(0);
+        z-index: auto;
+        box-shadow: none;
+    }
+
+    .nav-menu li {
+        padding: 0;
+        border-bottom: none;
+        display: block;
+    }
+
+    .nav-menu a {
+        display: inline;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        background-color: transparent;
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 0;
+    }
+
+    .nav-menu a:hover {
+        background-color: transparent;
+        padding-right: 0;
+        text-decoration: underline;
+    }
+
+    .nav-menu a::before {
+        display: none;
+    }
+
+    .we {
+        height: 100vh;
+    }
+
+    .hero {
+        height: 100vh;
+    }
 }
 
 .we {
     animation: slideUp 1s ease-out 0.3s both;
     background-image: url('/image/foto_putri/haflah_putri.jpg');
-    height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -253,8 +423,4 @@ body::-webkit-scrollbar {
     position: relative;
     z-index: 2;
     animation: SlideInKiri 2s ease-in-out both;
-}
-
-.we, .hero {
-    margin-top: 80px;
 }
