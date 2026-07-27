@@ -175,15 +175,16 @@ body::-webkit-scrollbar {
 
     .hamburger {
         display: flex;
+        
     }
 
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 59px;
         right: 0;
-        left: 0;
         flex-direction: column;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.9) 100%);
+        border-radius: 10px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%);
         gap: 0;
         padding: 0;
         margin: 0;
@@ -228,7 +229,7 @@ body::-webkit-scrollbar {
         text-decoration: none;
         transition: all 0.3s ease;
         position: relative;
-        border-radius: 6px;
+        border-radius: 10px;
         background-color: transparent;
     }
 
@@ -236,6 +237,7 @@ body::-webkit-scrollbar {
         color: rgb(229, 160, 33);
         background-color: rgba(229, 160, 33, 0.15);
         padding-right: 36px;
+        font-weight: bold;
     }
 
     .nav-menu a::before {
@@ -247,7 +249,7 @@ body::-webkit-scrollbar {
         width: 4px;
         height: 4px;
         background-color: rgb(229, 160, 33);
-        border-radius: 50%;
+        border-radius: 16px;
         opacity: 0;
         transition: opacity 0.3s ease;
     }
@@ -387,8 +389,8 @@ body::-webkit-scrollbar {
 
 .we p {
     position: relative;
-    font-size: 10px;
-    padding: 5px;
+    font-size: 16px;
+    padding: 0 10px;
     text-align: left;
 }
 
