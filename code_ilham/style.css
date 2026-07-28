@@ -433,8 +433,9 @@ body::-webkit-scrollbar {
 
 .memo {
     animation: slideInKiri 2s ease-in-out both;
-    font-size: 15px;
-    text-decoration: underline;
+    font-size: 35px;
+    text-align: center;
+    height: 10vh;
 }
 
 .box-image img {
@@ -447,10 +448,14 @@ body::-webkit-scrollbar {
     flex: 1;
     cursor: pointer;
     border: 2px solid #ffffff63;
-    filter: blur(3px);
+    filter: blur(2px);
 }
 
 .box-image img:hover {
     width: 20%;
     filter: blur(0px);
+}
+
+.box-image {
+    background-color: rgba(0, 0, 0, 0.1);
 }
