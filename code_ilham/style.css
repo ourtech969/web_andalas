@@ -21,6 +21,7 @@ body::-webkit-scrollbar {
 }
 
 .hero,
+.box-image,
 .we {
     scroll-snap-align: start;
 }
@@ -306,6 +307,25 @@ body::-webkit-scrollbar {
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 1;
     }
+
+    .box-image img {
+        width: 100px;
+        height: 50vh;
+        margin: 3px 6px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: all ease-in-out 0.8s;
+        flex: 1;
+        cursor: pointer;
+        border: 2px solid #ffffff63;
+        filter: blur(3px);
+    }
+
+    .box-image img:hover {
+        width: 20%;
+        filter: blur(0px);
+    }
+
 }
 
 /* Untuk tablet (min-width: 769px) dan (max-width: 1024px) */
@@ -415,4 +435,22 @@ body::-webkit-scrollbar {
     animation: slideInKiri 2s ease-in-out both;
     font-size: 15px;
     text-decoration: underline;
+}
+
+.box-image img {
+    width: 100px;
+    height: 50vh;
+    margin: 3px 3px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all ease-in-out 0.8s;
+    flex: 1;
+    cursor: pointer;
+    border: 2px solid #ffffff63;
+    filter: blur(3px);
+}
+
+.box-image img:hover {
+    width: 20%;
+    filter: blur(0px);
 }
