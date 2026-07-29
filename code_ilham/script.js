@@ -1,4 +1,3 @@
-// Hamburger menu toggle
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const navMenu = document.getElementById('navMenu');
 
@@ -7,7 +6,6 @@ hamburgerBtn.addEventListener('click', function() {
     hamburgerBtn.classList.toggle('active');
 });
 
-// Tutup menu ketika link diklik
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', function() {
         navMenu.classList.remove('active');
@@ -15,7 +13,6 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-// Smooth scroll untuk navigasi dengan offset navbar
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
